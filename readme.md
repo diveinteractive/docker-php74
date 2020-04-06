@@ -6,14 +6,14 @@ This is a custom build based on PHP 7.4's docker image, with changes to make Lar
 
 ## Where can I find it?
 
-You can find the image on Docker Hub here: https://hub.docker.com/r/nicoverbruggen/php74.
+You can find the image on Docker Hub here: https://hub.docker.com/r/diveinteractive/php74.
 
 ## GitLab CI
 
 For example, if you are running GitLab, you can use `.gitlab-ci` on your custom GitLab instance:
 
 ```
-image: nicoverbruggen/php74:latest
+image: diveinteractive/php74:latest
 
 cache:
   paths:
@@ -42,19 +42,19 @@ A few notes:
 
 Use the Dockerfile, customize it as desired and build it!
 
-Of course, you must replace `nicoverbruggen/php74` with something else if you want to publish your customized version yourself.
+Of course, you must replace `diveinteractive/php74` with something else if you want to publish your customized version yourself.
 
-    docker build -t nicoverbruggen/php74 . && docker push nicoverbruggen/php74
+    docker build -t diveinteractive/php74 . && docker push diveinteractive/php74
 
 If you want to tag the current version (let's say... `1.0`) based on the latest version you just pushed:
 
-    docker image tag nicoverbruggen/php74:latest nicoverbruggen/php74:1.0
-    docker push nicoverbruggen/php74:1.0
+    docker image tag diveinteractive/php74:latest diveinteractive/php74:1.0
+    docker push diveinteractive/php74:1.0
 
 Anyone can run it afterwards:
 
-    docker run nicoverbruggen/php74
+    docker run diveinteractive/php74
 
 You can also attach to the container w/ bash:
 
-    docker run -i -t nicoverbruggen/php74 /bin/bash
+    docker run -i -t diveinteractive/php74 /bin/bash
