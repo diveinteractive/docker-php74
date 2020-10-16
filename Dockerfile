@@ -33,7 +33,7 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 
 RUN docker-php-ext-install mbstring \
     pdo pdo_pgsql pdo_mysql mysqli \
-    curl json intl gd xml zip bz2 opcache exif bcmath
+    curl json intl gd xml zip bz2 opcache exif bcmath pdctl
 
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
