@@ -36,7 +36,8 @@ RUN docker-php-ext-install mbstring \
     curl json intl gd xml zip bz2 opcache exif bcmath pcntl
 
 RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug
+    && docker-php-ext-enable xdebug \
+    && echo "xdebug.mode=coverage" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 RUN apt-get install -y \
         libmagickwand-dev --no-install-recommends \
