@@ -23,7 +23,10 @@ RUN apt-get update -yqq \
     unixodbc-dev  libaspell-dev \
     libsnmp-dev libpcre3-dev libtidy-dev libonig-dev -yqq \
     # SQLite
-    sqlite3 libsqlite3-dev
+    && curl -O https://sqlite.org/2020/sqlite-tools-linux-x86-3340000.zip \
+    && unzip sqlite-tools-linux-x86-3340000.zip && cd sqlite-tools-linux-x86-3340000 \
+    && cp -v sqlite3 /usr/bin/
+
 
 #===============================================================================
 # Set up PHP
