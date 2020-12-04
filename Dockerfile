@@ -23,9 +23,10 @@ RUN apt-get update -yqq \
     unixodbc-dev  libaspell-dev \
     libsnmp-dev libpcre3-dev libtidy-dev libonig-dev -yqq \
     # SQLite
-    && curl -O https://sqlite.org/2020/sqlite-tools-linux-x86-3340000.zip \
-    && unzip sqlite-tools-linux-x86-3340000.zip && cd sqlite-tools-linux-x86-3340000 \
-    && cp -v sqlite3 /usr/bin/
+    libsqlite3-dev \
+    && curl -O https://sqlite.org/2020/sqlite-autoconf-3340000.tar.gz \
+    && tar -xvzf sqlite-autoconf-3340000.tar.gz && cd sqlite-autoconf-3340000 \
+    && ./configure && make && make install
 
 
 #===============================================================================
